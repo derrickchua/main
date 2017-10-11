@@ -13,7 +13,7 @@ image::derrickchua.jpg[width="150", align="left"]
 {empty}[https://github.com/derrickchua[github]]
 
 Role: Project Member +
-Responsibilites: UI
+Responsibilities: UI
 
 '''
 
