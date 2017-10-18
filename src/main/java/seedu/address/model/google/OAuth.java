@@ -12,6 +12,8 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.people.v1.PeopleServiceScopes;
+import com.google.common.eventbus.Subscribe;
+import seedu.address.commons.events.model.AuthorizationEvent;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -63,39 +65,45 @@ public class OAuth {
                             + "into seedu/address/src/main/resources/client_secrets.json");
             System.exit(1);
         }
+
         // set up authorization code flow
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
                 httpTransport, JSON_FACTORY, clientSecrets,
                 Collections.singleton(PeopleServiceScopes.CONTACTS)).setDataStoreFactory(dataStoreFactory)
                 .build();
+
         // authorize
+
         return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
     }
 
-    public static void execute () {
-        try {
-            // initialize the transport
-            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+    @Subscribe
+    public static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable{
+        new Thread (() -> {
+            try {
+                // initialize the transport
+                httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 
-            // initialize the data store factory
-            dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
+                // initialize the data store factory
+                dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
 
-            // authorization
-            Credential credential = authorize();
+                // authorization
+                Credential credential = authorize();
+                // set up global People instance
+                client = new com.google.api.services.people.v1.PeopleService.Builder(
+                        httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
 
-            // set up global Calendar instance
-            client = new com.google.api.services.people.v1.PeopleService.Builder(
-                    httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
-
-
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
+//            System.out.println(client.people().connections().list("people/me").setPersonFields("names,emailAddresses").execute().toPrettyString());
 
 
-        System.exit(1);
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            } catch (Throwable t) {
+                t.printStackTrace();
+            }
+        }).start();
+
+
     }
 
 }

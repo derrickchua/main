@@ -1,5 +1,7 @@
 package seedu.address.logic.commands;
 
+import seedu.address.commons.core.EventsCenter;
+import seedu.address.commons.events.model.AuthorizationEvent;
 import seedu.address.logic.commands.exceptions.CommandException;
 
 import static java.util.Objects.requireNonNull;
@@ -10,7 +12,7 @@ import static java.util.Objects.requireNonNull;
 public class SyncCommand extends UndoableCommand {
 
     public static final String COMMAND_WORD = "sync";
-    public static final String COMMAND_ALIAS = "s";
+    public static final String COMMAND_ALIAS = "sy";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Syncs the current addressbook with Google Contacts ";
 
@@ -20,9 +22,10 @@ public class SyncCommand extends UndoableCommand {
 
     @Override
     public CommandResult executeUndoableCommand() throws CommandException {
-        requireNonNull(model);
-        try {
 
+        try {
+            AuthorizationEvent event = new AuthorizationEvent();
+            EventsCenter.getInstance().post(event);
             return new CommandResult(String.format(MESSAGE_SUCCESS));
         } catch (Exception e) {
             throw new CommandException(MESSAGE_FAILURE);
