@@ -1,5 +1,11 @@
 package seedu.address.model.google;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -12,19 +18,17 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.people.v1.PeopleService;
-import com.google.api.services.people.v1.model.*;
 import com.google.api.services.people.v1.PeopleServiceScopes;
+import com.google.api.services.people.v1.model.Address;
+import com.google.api.services.people.v1.model.EmailAddress;
+import com.google.api.services.people.v1.model.Name;
+import com.google.api.services.people.v1.model.Person;
+import com.google.api.services.people.v1.model.PhoneNumber;
 import com.google.common.eventbus.Subscribe;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import seedu.address.commons.events.model.AuthorizationEvent;
+import seedu.address.model.person.Email;
 import seedu.address.model.person.ReadOnlyPerson;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 
 /**
  * Command-line sample for the Google OAuth2 API described at <a
@@ -52,7 +56,7 @@ public class OAuth {
     private static FileDataStoreFactory dataStoreFactory;
 
     /** Global instance of the HTTP transport. */
-    private static HttpTransport httpTransport ;
+    private static HttpTransport httpTransport;
 
     /** Global instance of the JSON factory. */
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
@@ -83,11 +87,14 @@ public class OAuth {
         return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
     }
 
-    private static void exportContacts (List<ReadOnlyPerson> personList) throws IOException{
+    /**Uploads AddressBook contacts to Google Contacts*/
+    private static void exportContacts (List<ReadOnlyPerson> personList) throws IOException {
         for (ReadOnlyPerson person : personList) {
             Person contactToCreate = new Person();
-            List name = new ArrayList<Name>(), email = new ArrayList<EmailAddress>();
-            List address = new ArrayList<Address>(), phone = new ArrayList<PhoneNumber>();
+            List<Name> name = new ArrayList<Name>();
+            List<EmailAddress> email = new ArrayList<EmailAddress>();
+            List<Address> address = new ArrayList<Address>();
+            List<PhoneNumber> phone = new ArrayList<PhoneNumber>();
             name.add(new Name().setGivenName(person.getName().fullName));
             email.add(new EmailAddress().setValue(person.getEmail().value));
             address.add(new Address().setFormattedValue(person.getAddress().value));
@@ -103,7 +110,7 @@ public class OAuth {
     }
 
     @Subscribe
-    public static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable{
+    public static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable {
         new Thread (() -> {
             try {
                 // initialize the transport
@@ -119,10 +126,6 @@ public class OAuth {
                         httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
 
                 exportContacts(event.getPersonList());
-
-//            System.out.println(client.people().connections().list("people/me").setPersonFields("names,emailAddresses").execute().toPrettyString());
-
-
             } catch (IOException e) {
                 System.err.println(e.getMessage());
             } catch (Throwable t) {

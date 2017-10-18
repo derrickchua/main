@@ -1,20 +1,20 @@
 package seedu.address.commons.events.model;
 
+import java.util.List;
+
 import seedu.address.commons.events.BaseEvent;
 import seedu.address.model.person.ReadOnlyPerson;
 
-import java.util.List;
+/** Indicates a request for Google account authorization*/
+public class AuthorizationEvent extends BaseEvent {
 
-
-public class AuthorizationEvent extends BaseEvent{
-
-    List<ReadOnlyPerson> personList;
+    private List<ReadOnlyPerson> personList;
 
     public AuthorizationEvent (List<ReadOnlyPerson> personList) {
         this.personList = personList;
     }
 
-    public List<ReadOnlyPerson> getPersonList(){
+    public List<ReadOnlyPerson> getPersonList() {
         return this.personList;
     }
 
