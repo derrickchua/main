@@ -11,13 +11,19 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
+import com.google.api.services.people.v1.PeopleService;
+import com.google.api.services.people.v1.model.*;
 import com.google.api.services.people.v1.PeopleServiceScopes;
 import com.google.common.eventbus.Subscribe;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import seedu.address.commons.events.model.AuthorizationEvent;
+import seedu.address.model.person.ReadOnlyPerson;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 
 /**
@@ -77,6 +83,25 @@ public class OAuth {
         return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
     }
 
+    private static void exportContacts (List<ReadOnlyPerson> personList) throws IOException{
+        for (ReadOnlyPerson person : personList) {
+            Person contactToCreate = new Person();
+            List name = new ArrayList<Name>(), email = new ArrayList<EmailAddress>();
+            List address = new ArrayList<Address>(), phone = new ArrayList<PhoneNumber>();
+            name.add(new Name().setGivenName(person.getName().fullName));
+            email.add(new EmailAddress().setValue(person.getEmail().value));
+            address.add(new Address().setFormattedValue(person.getAddress().value));
+            phone.add(new PhoneNumber().setValue(person.getPhone().value));
+
+            contactToCreate.setNames(name)
+                            .setEmailAddresses(email)
+                            .setAddresses(address)
+                            .setPhoneNumbers(phone);
+
+            Person createdContact = client.people().createContact(contactToCreate).execute();
+        }
+    }
+
     @Subscribe
     public static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable{
         new Thread (() -> {
@@ -90,8 +115,10 @@ public class OAuth {
                 // authorization
                 Credential credential = authorize();
                 // set up global People instance
-                client = new com.google.api.services.people.v1.PeopleService.Builder(
+                client = new PeopleService.Builder(
                         httpTransport, JSON_FACTORY, credential).setApplicationName(APPLICATION_NAME).build();
+
+                exportContacts(event.getPersonList());
 
 //            System.out.println(client.people().connections().list("people/me").setPersonFields("names,emailAddresses").execute().toPrettyString());
 
