@@ -27,7 +27,6 @@ import com.google.api.services.people.v1.model.PhoneNumber;
 import com.google.common.eventbus.Subscribe;
 
 import seedu.address.commons.events.model.AuthorizationEvent;
-import seedu.address.model.person.Email;
 import seedu.address.model.person.ReadOnlyPerson;
 
 /**
