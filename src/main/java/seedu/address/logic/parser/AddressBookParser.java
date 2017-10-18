@@ -65,9 +65,6 @@ public class AddressBookParser {
         case BackupCommand.COMMAND_WORD: case BackupCommand.COMMAND_ALIAS:
             return new BackupCommand();
 
-        case EditCommand.COMMAND_WORD: case EditCommand.COMMAND_ALIAS:
-            return new EditCommandParser().parse(arguments);
-
         case ClearCommand.COMMAND_WORD: case ClearCommand.COMMAND_ALIAS:
             return new ClearCommand();
 
@@ -99,7 +96,7 @@ public class AddressBookParser {
             return new ListCommand();
             
         case ResizeCommand.COMMAND_WORD: case ResizeCommand.COMMAND_ALIAS:
-            return new ResizeCommandParser().parse(arguments)
+            return new ResizeCommandParser().parse(arguments);
 
         case NoteCommand.COMMAND_WORD: case NoteCommand.COMMAND_ALIAS:
             return new NoteCommandParser().parse(arguments);
