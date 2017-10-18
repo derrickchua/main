@@ -94,7 +94,7 @@ public class AddressBookParser {
 
         case ListCommand.COMMAND_WORD: case ListCommand.COMMAND_ALIAS:
             return new ListCommand();
-            
+
         case ResizeCommand.COMMAND_WORD: case ResizeCommand.COMMAND_ALIAS:
             return new ResizeCommandParser().parse(arguments);
 
@@ -103,7 +103,7 @@ public class AddressBookParser {
 
         case RedoCommand.COMMAND_WORD: case RedoCommand.COMMAND_ALIAS:
             return new RedoCommand();
-            
+
         case RestoreBackupCommand.COMMAND_WORD: case RestoreBackupCommand.COMMAND_ALIAS:
             return new RestoreBackupCommand();
 

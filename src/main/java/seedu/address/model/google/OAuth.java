@@ -86,7 +86,9 @@ public class OAuth {
         return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
     }
 
-    /**Uploads AddressBook contacts to Google Contacts*/
+    /**Uploads AddressBook contacts to Google Contacts
+     * TODO: Prevent adding of duplicates
+     */
     private static void exportContacts (List<ReadOnlyPerson> personList) throws IOException {
         for (ReadOnlyPerson person : personList) {
             Person contactToCreate = new Person();
