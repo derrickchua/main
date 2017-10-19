@@ -69,7 +69,9 @@ allprojects {
         compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonDataTypeVersion"
         compile "com.google.guava:guava:$guavaVersion"
         compile "com.google.oauth-client:google-oauth-client-jetty:$jettyVersion"
-        compile "com.google.apis:google-api-services-people:$peopleVersion"
+        compile "com.google.apis:google-api-services-people:$peopleVersion", {
+            exclude group: "com.google.guava", module: "guava-jdk5"
+        }
 
         testCompile "junit:junit:$junitVersion"
         testCompile "org.testfx:testfx-core:$testFxVersion"

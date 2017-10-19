@@ -26,6 +26,7 @@ import com.google.api.services.people.v1.model.Person;
 import com.google.api.services.people.v1.model.PhoneNumber;
 import com.google.common.eventbus.Subscribe;
 
+import seedu.address.commons.core.EventsCenter;
 import seedu.address.commons.events.model.AuthorizationEvent;
 import seedu.address.model.person.ReadOnlyPerson;
 
@@ -37,6 +38,14 @@ import seedu.address.model.person.ReadOnlyPerson;
  * @author Yaniv Inbar
  */
 public class OAuth {
+
+    public OAuth() {
+        registerAsAnEventHandler(this);
+    }
+
+    protected void registerAsAnEventHandler(Object handler) {
+        EventsCenter.getInstance().registerHandler(handler);
+    }
 
     /**
      * Be sure to specify the name of your application. If the application name is {@code null} or

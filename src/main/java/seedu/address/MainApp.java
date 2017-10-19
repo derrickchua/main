@@ -77,7 +77,6 @@ public class MainApp extends Application {
         ui = new UiManager(logic, config, userPrefs);
 
         initEventsCenter();
-        EventsCenter.getInstance().registerHandler(oauth);
     }
 
     private String getApplicationParameter(String parameterName) {
