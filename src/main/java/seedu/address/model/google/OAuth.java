@@ -39,14 +39,6 @@ import seedu.address.model.person.ReadOnlyPerson;
  */
 public class OAuth {
 
-    public OAuth() {
-        registerAsAnEventHandler(this);
-    }
-
-    protected void registerAsAnEventHandler(Object handler) {
-        EventsCenter.getInstance().registerHandler(handler);
-    }
-
     /**
      * Be sure to specify the name of your application. If the application name is {@code null} or
      * blank, the application will log a warning. Suggested format is "MyCompany-ProductName/1.0".
@@ -70,6 +62,14 @@ public class OAuth {
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     private static com.google.api.services.people.v1.PeopleService client;
+
+    public OAuth() {
+        registerAsAnEventHandler(this);
+    }
+
+    protected void registerAsAnEventHandler(Object handler) {
+        EventsCenter.getInstance().registerHandler(handler);
+    }
 
     /** Authorizes the installed application to access user's protected data. */
     private static Credential authorize() throws Exception {
@@ -120,7 +120,7 @@ public class OAuth {
     }
 
     @Subscribe
-    public static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable {
+    private static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable {
         new Thread (() -> {
             try {
                 // initialize the transport
