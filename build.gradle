@@ -36,16 +36,17 @@ allprojects {
     // Access them by using double-quoted strings (GStrings) and referencing by $ e.g. "Variable contains $Variable"
     project.ext {
         controlsFxVersion = '8.40.11'
-        gapiVersion = '1.23.0'
         guavaVersion = '19.0'
         jacksonVersion = '2.7.0'
         jacksonDataTypeVersion = '2.7.4'
-        jettyVersion = '1.23.0'
         junitVersion = '4.12'
         oauthVersion = '1.19.0'
         testFxVersion = '4.0.7-alpha'
         monocleVersion = '1.8.0_20'
         checkstyleVersion = '8.1'
+        gapiVersion = '1.23.0'
+        jettyVersion = '1.23.0'
+        peopleVersion = 'v1-rev155-1.23.0'
 
         libDir = 'lib'
     }
@@ -70,7 +71,7 @@ allprojects {
         compile "com.google.guava:guava:$guavaVersion"
         compile "com.google.api-client:google-api-client:$gapiVersion"
         compile "com.google.oauth-client:google-oauth-client-jetty:$jettyVersion"
-        compile 'com.google.apis:google-api-services-people:v1-rev155-1.23.0'
+        compile "com.google.apis:google-api-services-people:$peopleVersion"
 
         testCompile "junit:junit:$junitVersion"
         testCompile "org.testfx:testfx-core:$testFxVersion"
