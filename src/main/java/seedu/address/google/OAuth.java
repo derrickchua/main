@@ -1,4 +1,4 @@
-package seedu.address.model.google;
+package seedu.address.google;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -111,9 +111,9 @@ public class OAuth {
             phone.add(new PhoneNumber().setValue(person.getPhone().value));
 
             contactToCreate.setNames(name)
-                            .setEmailAddresses(email)
-                            .setAddresses(address)
-                            .setPhoneNumbers(phone);
+                    .setEmailAddresses(email)
+                    .setAddresses(address)
+                    .setPhoneNumbers(phone);
 
             Person createdContact = client.people().createContact(contactToCreate).execute();
         }
