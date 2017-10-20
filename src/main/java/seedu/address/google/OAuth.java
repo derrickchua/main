@@ -1,4 +1,4 @@
-package seedu.address.model.google;
+package seedu.address.google;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
