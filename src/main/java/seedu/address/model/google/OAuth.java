@@ -120,7 +120,7 @@ public class OAuth {
     }
 
     @Subscribe
-    private static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable {
+    public static void handleAuthorizationEvent(AuthorizationEvent event) throws Throwable {
         new Thread (() -> {
             try {
                 // initialize the transport
