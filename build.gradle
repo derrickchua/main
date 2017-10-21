@@ -69,7 +69,6 @@ allprojects {
         compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
         compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonDataTypeVersion"
         compile "com.google.guava:guava:$guavaVersion"
-        compile "com.google.api-client:google-api-client:$gapiVersion"
         compile "com.google.oauth-client:google-oauth-client-jetty:$jettyVersion"
         compile "com.google.apis:google-api-services-people:$peopleVersion", {
             exclude group: "com.google.guava", module: "guava-jdk5"
