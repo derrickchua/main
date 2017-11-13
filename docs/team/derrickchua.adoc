@@ -40,6 +40,8 @@ include::../DeveloperGuide.adoc[tag=sync]
 
 ---
 
+<<<
+
 === Enhancement Added: Add command `note`
 ==== External behavior
 
@@ -56,6 +58,8 @@ include::../UserGuide.adoc[tag=note]
 
 Adding a `note` command enables the user to add notes for his contacts quickly should he need
 to jot something down.
+
+<<<
 
 === Enhancement Added: Optional fields for `add`
 

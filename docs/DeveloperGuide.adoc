@@ -733,7 +733,7 @@ public class SyncCommand extends Command {
 ---
 
 **Aspect:** Authorisation cannot be performed synchronously due to the Google People library +
-**Alternative 1 (current choice):**  Introduce a new command `login` which is asynchronous, while `sync` remains synchronous
+**Alternative 1 (current choice):**  Introduce a new command `login` which is asynchronous, while `sync` remains synchronous +
 **Pros:** `Model` can be updated as we remain on the application thread +
 **Cons:** It is difficult to control the number of open threads, which can impact system resources, and we have to run `login` before `sync` +
 
