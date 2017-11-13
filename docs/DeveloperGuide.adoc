@@ -558,9 +558,9 @@ The actual implementation of filtering the displayed list involves three steps. 
 .  Use [https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html#and-java.util.function.Predicate-[Predicate.and()]] to generated the logical AND of the two predicates.
 .  Update the list using the predicate generated in step 2.
 
-For more detail, refer to the sequence diagram(Figure 3.4.3.1) below.
+For more details, refer to the sequence diagram(Figure 3.4.3.1) below.
 
-image::FindCommandSequenceDiagram.png[]
+image:FindCommandSequenceDiagram.png[width="800", height = "400"] +
 _Figure 3.4.3.1 : Sequence Diagram for Find_
 
 ==== Design consideration
