@@ -36,6 +36,8 @@ include::../DeveloperGuide.adoc[tag=addremovetag]
 
 ---
 
+<<<
+
 === Enhancement Added: AddMeeting/DeleteMeeting
 
 ==== External behavior
@@ -53,6 +55,7 @@ include::../UserGuide.adoc[tag=addremovemeeting]
 
 Businessmen frequently need to arrange meetings. This allows them to add meetings to specific people. They are also able to delete the meeting if it has been cancelled or has already passed.
 
+<<<
 
 === Enhancement Added: Sort
 
@@ -70,6 +73,8 @@ include::../UserGuide.adoc[tag=sort]
 ==== Justification
 
 As a user with many contacts, it can be difficult to find someone in your ABC. As such, the sort command allows users to arrange their contact in the way that is most convenient for them, whether it be name, phone, address, or even meeting time.
+
+<<<
 
 === Enhancement Proposed: Automatic checking of date
 

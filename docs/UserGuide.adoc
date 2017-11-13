@@ -46,8 +46,8 @@ This app will not work with earlier versions of Java 8.
 image:Ui_labelled.png[width="600"] +
 _Figure 3.1_
 
-.  Type the command in the command box and press kbd:[Enter] to execute it. +
-e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
+.  Type the command in the command box and press `Enter` to execute it. +
+e.g. typing *`help`* and pressing `Enter` will open the help window.
 .  Here are some example commands you can try:
 
 * `>>  *list*` : lists all contacts
@@ -72,7 +72,7 @@ This section aims to help you understand the features in *ABC*. It contains a de
 * Items that comes before `…`​ can have multiple entries e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 * Index refers to the index number shown in the most recent listing. The index *must be a positive integer* e.g. 1, 2, 3, ...
 // tag::tabcomplete[]
-* Suggestions will pop up for partial words keyed in. Press kbd:[TAB] to auto-complete using the first suggestion or press `Up` and `Down` arrow keys and kbd:[Enter] to choose the suggestion.
+* Suggestions will pop up for partial words keyed in. Press kbd:[TAB] to auto-complete using the first suggestion or press `Up` and `Down` arrow keys and `Enter` to choose the suggestion.
 // end::tabcomplete[]
 ====
 
@@ -92,7 +92,7 @@ If you want to view the *User Guide*: +
 (See Figure 4.1.1) +
 image:help.png[help, 600] +
 _Figure 4.1.1_
-.  Press kbd:[Enter] and this *User Guide* document will show up
+.  Press `Enter` and this *User Guide* document will show up
 
 <<<
 
@@ -117,7 +117,7 @@ If you want to add a new contact to your *ABC*: +
 (See Figure 4.2.1) +
 image:add1.png[add1, 600] +
 _Figure 4.2.1_
-.  Press kbd:[Enter] and you should see that a new contact has been added +
+.  Press `Enter` and you should see that a new contact has been added +
 (See Figure 4.2.2) +
 image:add2.png[UI, 600] +
 _Figure 4.2.2_
@@ -148,7 +148,7 @@ You can view all your contacts by following the steps below:
 (See Figure 4.3.1) +
 image:list1.png[list1, 600] +
 _Figure 4.3.1_
-.   Press kbd:[Enter] and you should see a list of all your contacts +
+.   Press `Enter` and you should see a list of all your contacts +
 (See Figure 4.3.2) +
 image:list2.png[list2, 600] +
 _Figure 4.3.2_
@@ -182,7 +182,7 @@ If you want to find a person named `John Watson`:
 (See Figure 4.4.1) +
 image:find1.png[find1, 600] +
 _Figure 4.4.1_
-.  Press kbd:[Enter] and you should see a list of persons having the name `john` +
+.  Press `Enter` and you should see a list of persons having the name `john` +
 (See Figure 4.4.2) +
 image:find2.png[find2, 600] +
 _Figure 4.4.2_
@@ -218,7 +218,7 @@ If you would like to sort your contact list:
 (See Figure 4.5.1) +
 image:sort_1.png[sort1, 600] +
 _Figure 4.5.1_
-.  Press kbd:[Enter] and your contact list will be sorted +
+.  Press Enter and your contact list will be sorted +
 (See Figure 4.5.2) +
 image:sort_2.png[sort2, 600] +
 _Figure 4.5.2_
@@ -251,7 +251,7 @@ If you want to delete a contact in your *ABC*: +
 (See Figure 4.6.1) +
 image:Delete_1.png[delete1, 600] +
 _Figure 4.6.1_
-.  Press kbd:[Enter] and you should see that the selected contact has been deleted +
+.  Press `Enter` and you should see that the selected contact has been deleted +
 (See Figure 4.6.2) +
 image:Delete_2.png[delete2, 600] +
 _Figure 4.6.2_
@@ -291,7 +291,7 @@ If you want to change the details of a contact in your *ABC*: +
 (See Figure 4.7.1) +
 image:Edit_1.png[edit1, 600] +
 _Figure 4.7.1_
-.  Press kbd:[Enter] and you should see that the contact selected has been modified +
+.  Press Enter and you should see that the contact selected has been modified +
 (See Figure 4.7.2) +
 image:Edit_2.png[edit2, 600] +
 _Figure 4.7.2_
@@ -345,7 +345,7 @@ If you want to add a single tag to a contact in your *ABC*: +
 (See Figure 4.8.1) +
 image:addtag_1.png[addtag1, 600] +
 _Figure 4.8.1_
-.  Press kbd:[Enter] and you should see that the contact selected has been modified +
+.  Press Enter and you should see that the contact selected has been modified +
 (See Figure 4.8.2) +
 image:addtag_2.png[addtag2, 600] +
 _Figure 4.8.2_
@@ -377,7 +377,7 @@ If you want to delete a single tag from a contact in your *ABC*: +
 (See Figure 4.9.1) +
 image:deletetag_1.png[deletetag1, 600] +
 _Figure 4.9.1_
-.  Press kbd:[Enter] and you should see that the contact selected has been modified +
+.  Press Enter and you should see that the contact selected has been modified +
 (See Figure 4.9.2) +
 image:deletetag_2.png[deletetag2, 600] +
 _Figure 4.9.2_
@@ -400,7 +400,7 @@ If you would like to delete all instances of a particular tag from your *ABC*: +
 image:deletetag_3.png[deletetag3, 600] +
 _Figure 4.9.3_
 
-.  Press kbd:[Enter] and you should see that this tag has been deleted from all contacts +
+.  Press Enter and you should see that this tag has been deleted from all contacts +
 (See Figure 4.9.4) +
 image:deletetag_4.png[deletetag4, 600] +
 _Figure 4.9.4_
@@ -427,7 +427,7 @@ If you want to add a meeting to a contact in your *ABC*: +
 (See Figure 4.10.1) +
 image:addmeeting_1.png[addmeeting1, 600] +
 _Figure 4.10.1_
-.  Press kbd:[Enter] and you should see that the contact that you selected has been modified +
+.  Press `Enter` and you should see that the contact that you selected has been modified +
 (See Figure 4.10.2) +
 image:addmeeting_2.png[addmeeting2, 600] +
 _Figure 4.10.2_
@@ -459,7 +459,7 @@ If you want to delete a meeting in your *ABC*: +
 (See Figure 4.11.1) +
 image:deletemeeting_1.png[deletemeeting1, 600] +
 _Figure 4.11.1_
-.  Press kbd:[Enter] and you should see that the selected meeting has been deleted +
+.  Press Enter and you should see that the selected meeting has been deleted +
 (See Figure 4.11.2) +
 image:deletemeeting_2.png[deletemeeting2, 600] +
 _Figure 4.11.2_
@@ -494,7 +494,7 @@ You can select a contact from the displayed list by following the steps below:
 (See Figure 4.12.1) +
 image:select1.png[select1, 600] +
 _Figure 4.12.1_ +
-. Pressing kbd:[Enter] and your choice should now be selected +
+. Pressing `Enter` and your choice should now be selected +
 (See Figure 4.12.2) +
 image:select2.png[select2, 600] +
 _Figure 4.12.2_
@@ -539,7 +539,7 @@ If you want to add a note for a contact:
 (See Figure 4.13.1) +
 image:note1.png[note1, 600] +
 _Figure 4.13.1_
-. Press kbd:[Enter] and your note should appear as the last row in your contact's details +
+. Press `Enter` and your note should appear as the last row in your contact's details +
 (See Figure 4.13.2) +
 image:note2.png[note2, 600] +
 _Figure 4.13.2_
@@ -571,7 +571,7 @@ You can also clear all ABC contacts. To do so:
 (See Figure 4.14.1) +
 image:clear1.png[clear1, 600] +
 _Figure 4.14.1_
-.   Press kbd:[Enter] and your contacts should now be cleared +
+.   Press `Enter` and your contacts should now be cleared +
 (See Figure 4.14.2) +
 image:clear2.png[clear2, 600] +
 _Figure 4.14.2_
@@ -597,7 +597,7 @@ If you want to backup your data:
 (See Figure 4.15.1) +
 image:Backup_1.png[backup1, 600] +
 _Figure 4.15.1_ +
-. Press kbd:[Enter] and you should see a message indicating the successful backup of your data +
+. Press `Enter` and you should see a message indicating the successful backup of your data +
 (See Figure 4.15.2) +
 image:Backup_2.png[backup2, 600] +
 _Figure 4.15.2_ +
@@ -622,7 +622,7 @@ If you encounter an unforeseen circumstance and want to revert to a backup: +
 image:Restore_1.png[restore1, 600] +
 _Figure 4.16.1_ +
 
-. Press kbd:[Enter] and you should see that the backup data is restored +
+. Press `Enter` and you should see that the backup data is restored +
 (See Figure 4.16.2) +
 image:Restore_2.png[restore2, 600] +
 _Figure 4.16.2_ +
@@ -647,7 +647,7 @@ If you would like to login to Google Contacts:
 (See Figure 4.17.1) +
 image:login1.png[login1, 600] +
 _Figure 4.17.1_
-.   Press kbd:[Enter] and your default browser should open a login window +
+.   Press `Enter` and your default browser should open a login window +
 (See Figure 4.17.2) +
 image:login2.png[sync2, 600] +
 _Figure 4.17.2_
@@ -737,7 +737,7 @@ If you want to view the list of commands entered: +
 (See Figure 4.20.1) +
 image:history1.png[history1, 600] +
 _Figure 4.20.1_
-.  Press kbd:[Enter] and the list of commands that you entered before would show up +
+.  Press `Enter` and the list of commands that you entered before would show up +
 (See Figure 4.20.2) +
 image:history2.png[history2, 600] +
 _Figure 4.20.2_
@@ -772,7 +772,7 @@ _Figure 4.21.1_ +
 image:Undo_2.png[undo2, 600] +
 _Figure 4.21.2_ +
 
-. Press kbd:[Enter] and you should see that the effects of `delete 1` has been reverted +
+. Press `Enter` and you should see that the effects of `delete 1` has been reverted +
 (See Figure 4.21.3) +
 image:Undo_3.png[undo3, 600] +
 _Figure 4.21.3_ +
@@ -812,7 +812,7 @@ _Figure 4.21.8_ +
 (See Figure 4.21.9) +
 image:Undo_9.png[undo9, 600] +
 _Figure 4.21.9_ +
-. Press kbd:[Enter] and you should see that the `clear` command is reverted +
+. Press `Enter` and you should see that the `clear` command is reverted +
 (See Figure 4.21.10) +
 image:Undo_10.png[undo10, 600] +
 _Figure 4.21.10_ +
@@ -840,7 +840,7 @@ If you `delete` a contact and `undo` the `delete` by mistake: +
 (See Figure 4.22.1) +
 image:Redo_1.png[redo1, 600] +
 _Figure 4.22.1_ +
-. Press kbd:[Enter] and the contact is removed +
+. Press `Enter` and the contact is removed +
 (See Figure 4.22.2) +
 image:Redo_2.png[redo2, 600] +
 _Figure 4.22.2_ +
@@ -854,7 +854,7 @@ _Figure 4.22.3_ +
 (See Figure 4.22.4) +
 image:Redo_4.png[redo4, 600] +
 _Figure 4.22.4_ +
-. Press kbd:[Enter] and you should see that the `undo` command has been reverted and the contact remains deleted +
+. Press `Enter` and you should see that the `undo` command has been reverted and the contact remains deleted +
 (See Figure 4.22.5) +
 image:Redo_5.png[redo5, 600] +
 _Figure 4.22.5_ +
@@ -872,7 +872,7 @@ _Figure 4.22.6_ +
 (See Figure 4.22.7) +
 image:Redo_7.png[redo7, 600] +
 _Figure 4.22.7_ +
-. Press kbd:[Enter] and you should see an error message +
+. Press `Enter` and you should see an error message +
 (See Figure 4.22.8) +
 image:Redo_8.png[redo8, 600] +
 _Figure 4.22.8_ +
@@ -931,7 +931,7 @@ If you want to resize your main window to 1280 * 720: +
 (See Figure 4.23.1) +
 image:resize.png[resize, 600] +
 _Figure 4.23.1_
-.  Press kbd:[Enter] and the main window will be resized to 1280 * 720
+.  Press `Enter` and the main window will be resized to 1280 * 720
 // end::resize[]
 
 <<<
@@ -952,7 +952,7 @@ If you want to close *ABC*:
 (See Figure 4.24.1) +
 image:Exit_1.png[exit1, 600] +
 _Figure 4.24.1_ +
-. Press kbd:[Enter] and you will see that *ABC* is closed. +
+. Press `Enter` and you will see that *ABC* is closed. +
 
 === Saving the data
 
