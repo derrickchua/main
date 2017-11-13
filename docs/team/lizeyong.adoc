@@ -53,6 +53,8 @@ By filtering the displayed list, the user can narrow down the list to locate a s
 
 ---
 
+<<<
+
 ===== Implementation
 
 ---
@@ -85,6 +87,7 @@ Suggestions are also generated based on the context of what the user has keyed i
 
 Auto-Completion allows users to type less. Moreover, since all suggestions are generated from the stored data, it can reduce the chance of mistyping. For example, if the user wants to find a contact by a very long name, the name would show up as a suggestion when the user type in the first few letters. On the other hand, if the user needs to type the name out in full, there is a higher chance for him to make mistakes.
 
+<<<
 
 === Enhancement Added: `resize` Command
 
