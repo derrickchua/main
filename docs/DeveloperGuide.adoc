@@ -563,6 +563,8 @@ For more detail, refer to the sequence diagram(Figure 3.4.3.1) below.
 image::FindCommandSequenceDiagram.png[]
 _Figure 3.4.3.1 : Sequence Diagram for Find_
 
+<<<
+
 ==== Design consideration
 The design for filtering the displayed list applies the [https://en.wikipedia.org/wiki/Open/closed_principle[Open/Close Principle]].
 
