@@ -7,7 +7,7 @@
 .    Set up a dummy gmail account for use in synchronising contacts
 
 === Sync
-[width="100%",cols="5%, 15%, 80%",options="header",]
+[width="100%",cols="7%, 23%, 70%",options="header",]
 |=======================================================================
 |Index |Command |Expected Output
 |S1 |sync  |Error message: “Please login first”
@@ -22,7 +22,7 @@
 |=======================================================================
 
 === Contacts
-[width="100%",cols="5%, 15%, 80%",options="header",]
+[width="100%",cols="7%, 23%, 70%",options="header",]
 |=======================================================================
 |Index |Command |Expected Output
 |C1 |add n/John Moe | New person added: John Moe Phone: No Phone Number Email: No Email Address: No Address Note:  Tags:  Meetings:
@@ -77,13 +77,13 @@ Example: note 1  Has 3 children.
 |=======================================================================
 
 === Organization
-[width="100%",cols="5%, 15%, 80%",options="header",]
+[width="100%",cols="7%, 23%, 70%",options="header",]
 |=======================================================================
 |Index |Command |Expected Output
 |O1 |list| Listed all persons
 |O2 |find t/fri | Suggestion for `find t/friend` would pop up
-|O3 |Press kbd:[tab] | The command would be completed with `find t/friend`
-|O4 |Press kdb:[enter] | 9 persons listed!
+|O3 |Press `Tab` | The command would be completed with `find t/friend`
+|O4 |Press `Enter` | 9 persons listed!
 |O5 |list | Listed all persons
 |O6 |find t/friend family | 11 persons listed!
 |O7 |list | Listed all persons
@@ -115,7 +115,7 @@ Example: sort tag
 |=======================================================================
 <<<
 === Meetings
-[width="100%",cols="5%, 15%, 80%",options="header",]
+[width="100%",cols="7%, 23%, 70%",options="header",]
 |=======================================================================
 |Index |Command |Expected Output
 |M1 |addmeeting| Error message: “Invalid command format!
@@ -150,7 +150,7 @@ Example: select 1”
 |=======================================================================
 
 === Tags
-[width="100%",cols="5%, 15%, 80%",options="header",]
+[width="100%",cols="7%, 23%, 70%",options="header",]
 |=======================================================================
 |Index |Command |Expected Output
 |T1 |addtag|Error message : “Invalid command format! addtag: Adds a tag to the person identified by the index number used in the last person listing. Parameters: INDEX (must be a positive integer) TAG NAME (one alphanumeric tag only) Example: addtag 1 friends”
@@ -160,14 +160,14 @@ Example: select 1”
 |T5 |deletetag 1 uncle| Deleted Tag: uncle
 |T6 |deletetag 1 uncle| Error message: This person does not have this tag.
 |T7 |find t/friend|9 persons listed!
-|T8 |deletetag all friend| Deleted Tag: friend (the list becomes empty
+|T8 |deletetag all friend| Deleted Tag: friend (the list becomes empty)
 |T9 |list|Listed all persons
 |T10 |find t/friend|0 persons listed!
 |T11 |undo| Undo success!
 |=======================================================================
 
 === Others
-[width="100%",cols="5%, 15%, 80%",options="header",]
+[width="100%",cols="7%, 23%, 70%",options="header",]
 |=======================================================================
 |Index |Command |Expected Output
 |Z1 |help |Opens the User Guide
