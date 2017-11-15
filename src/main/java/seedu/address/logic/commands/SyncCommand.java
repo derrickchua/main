@@ -247,6 +247,7 @@ public class SyncCommand extends Command {
             }
 
             person = hashGoogleId.get(id);
+            connections.remove(person);
 
             String lastUpdated = person.getMetadata().getSources().get(0).getUpdateTime();
             Instant gTime = Instant.parse(lastUpdated);
