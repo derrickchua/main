@@ -378,7 +378,8 @@ public class SyncCommand extends Command {
             logger.warning("Google Contact has no retrievable name");
             return null;
         } else {
-            seedu.address.model.person.Name aName = (seedu.address.model.person.Name.isValidName(retrieveFullGName(person)))
+            seedu.address.model.person.Name aName = (
+                    seedu.address.model.person.Name.isValidName(retrieveFullGName(person)))
                 ? new seedu.address.model.person.Name(retrieveFullGName(person))
                 : null;
 
