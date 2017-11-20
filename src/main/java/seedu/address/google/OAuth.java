@@ -28,7 +28,7 @@ import com.google.api.services.people.v1.PeopleServiceScopes;
  *
  * @author Yaniv Inbar
  */
-public class OAuth extends Observable {
+public class OAuth {
 
     private static final OAuth oauth = new OAuth();
 

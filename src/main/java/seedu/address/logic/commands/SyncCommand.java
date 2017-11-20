@@ -103,7 +103,7 @@ public class SyncCommand extends Command {
      * @throws Exception
      */
     private void initialise() throws Exception {
-        List<ReadOnlyPerson> personList = model.getFilteredPersonList();
+        List<ReadOnlyPerson> personList =  model.getAddressBook().getPersonList();;
         client = clientFuture.get();
         ListConnectionsResponse response = client.people().connections().list("people/me")
                 .setPageSize(2000)
@@ -127,7 +127,7 @@ public class SyncCommand extends Command {
      * @throws Exception
      */
     private void checkContacts() throws Exception {
-        List<ReadOnlyPerson> personList = model.getFilteredPersonList();
+        List<ReadOnlyPerson> personList =  model.getAddressBook().getPersonList();;
         List<ReadOnlyPerson> toDelete = new ArrayList<ReadOnlyPerson>();
         for (ReadOnlyPerson person : personList) {
             String id = person.getId().getValue();
@@ -159,7 +159,7 @@ public class SyncCommand extends Command {
      */
 
     private void exportContacts () throws Exception {
-        List<ReadOnlyPerson> personList = model.getFilteredPersonList();
+        List<ReadOnlyPerson> personList = model.getAddressBook().getPersonList();
         for (ReadOnlyPerson person : personList) {
             if (person.getId().getValue().equals("")) {
                 seedu.address.model.person.Person key = getHashKey(person);
